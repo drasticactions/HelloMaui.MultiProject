@@ -8,7 +8,7 @@
     <None Remove="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.458" />
+    <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.482" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hello.Maui\Hello.Maui.csproj" />

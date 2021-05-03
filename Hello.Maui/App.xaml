@@ -5,19 +5,12 @@
     <Application.Resources>
         <ResourceDictionary>
 
-            <!-- Add any additional resources here. -->
-            <Color x:Key="PageBackgroundColor">White</Color>
-
-            <Color x:Key="PrimaryTextColor">Black</Color>
-
-            <Color x:Key="GlyphColor">#2B0B98</Color>
-
             <Style TargetType="Label">
-                <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+                <Setter Property="TextColor" Value="Black" />
             </Style>
 
             <Style TargetType="Label" x:Key="Glyph">
-                <Setter Property="TextColor" Value="{DynamicResource GlyphColor}" />
+                <Setter Property="TextColor" Value="#2B0B98" />
                 <Setter Property="FontFamily" Value="IonIcons" />
                 <Setter Property="FontSize" Value="32" />
             </Style>

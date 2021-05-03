@@ -1,7 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HelloMaui.MainPage"
-             BackgroundColor="{DynamicResource PageBackgroundColor}">
+             x:Class="HelloMaui.MainPage">
 
     <ScrollView>
         <StackLayout Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
@@ -27,20 +26,17 @@
             <Button Text="Click Me!" Clicked="OnButtonClicked" />
 
             <Label Text="Entry" 
-                TextColor="{DynamicResource PrimaryTextColor}"  />
+                  />
             <Entry x:Name="entry" Text="Entry" />
 
             <Label Text="Slider" 
-                TextColor="{DynamicResource PrimaryTextColor}"  />
+                />
             <Slider />
 
             <Label Text="Switch" />
             <Switch HorizontalOptions="Start" />
 
             <Label Text="Image" />
-            <Image 
-                Source="dotnet_bot.png"
-                Margin="40,0" />
 
         </StackLayout>
     </ScrollView>
