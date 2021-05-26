@@ -1,7 +1,12 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
+using Microsoft.Maui.Controls.Xaml;
+using System;
+using System.Reflection;
+using Application = Microsoft.Maui.Controls.Application;
 
-namespace HelloMaui
+namespace Hello.Maui
 {
 	public partial class App : Application
 	{
@@ -14,7 +19,29 @@ namespace HelloMaui
 		{
 			Microsoft.Maui.Controls.Compatibility.Forms.Init(activationState);
 
-			return new Window(new MainPage());
+			this.On<Microsoft.Maui.Controls.PlatformConfiguration.Windows>()
+				.SetImageDirectory("Assets");
+
+			return new Microsoft.Maui.Controls.Window(new MainPage());
+		}
+	}
+
+	[ContentProperty(nameof(Source))]
+	public class ImageResourceExtension : IMarkupExtension
+	{
+		public string Source { get; set; }
+
+		public object ProvideValue(IServiceProvider serviceProvider)
+		{
+			if (Source == null)
+			{
+				return null;
+			}
+
+			// Do your translation lookup here, using whatever method you require
+			var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+
+			return imageSource;
 		}
 	}
 }

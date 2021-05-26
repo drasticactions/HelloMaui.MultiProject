@@ -1,9 +1,8 @@
-using Microsoft.Maui;
+﻿using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Compatibility;
-using Microsoft.Maui.LifecycleEvents;
 
-namespace HelloMaui
+namespace Hello.Maui
 {
 	public class Startup : IStartup
 	{
@@ -11,16 +10,7 @@ namespace HelloMaui
 		{
 			appBuilder
 				.UseFormsCompatibility()
-				.UseMauiApp<App>()
-				.ConfigureLifecycleEvents(lifecycle => {
-					#if ANDROID
-					lifecycle.AddAndroid(d => {
-						d.OnBackPressed(activity => {
-							System.Diagnostics.Debug.WriteLine("Back button pressed!");
-						});
-					});
-					#endif
-				});
+				.UseMauiApp<App>();
 		}
 	}
 }

@@ -3,6 +3,12 @@
     <TargetFramework>net6.0-android</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="dotnet_bot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dotnet_bot.png" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.482" />
   </ItemGroup>
   <ItemGroup>

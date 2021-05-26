@@ -1,7 +1,6 @@
 ﻿using System;
 using Android.App;
 using Android.Runtime;
-using HelloMaui;
 using Microsoft.Maui;
 
 namespace Hello.Maui.Android

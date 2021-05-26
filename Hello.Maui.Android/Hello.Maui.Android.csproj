@@ -4,6 +4,12 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Resources\mipmap-anydpi-v26\dotnet_bot.png" />
+    <None Remove="Resources\mipmap-hdpi\dotnet_bot.png" />
+    <None Remove="Resources\mipmap-mdpi\dotnet_bot.png" />
+    <None Remove="Resources\mipmap-xhdpi\dotnet_bot.png" />
+    <None Remove="Resources\mipmap-xxhdpi\dotnet_bot.png" />
+    <None Remove="Resources\mipmap-xxxhdpi\dotnet_bot.png" />
     <None Remove="Resources\values\colors.xml" />
     <None Remove="Resources\values\styles.xml" />
   </ItemGroup>

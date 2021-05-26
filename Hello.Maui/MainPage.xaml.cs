@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Reflection;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Xaml;
 
-namespace HelloMaui
+namespace Hello.Maui
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainPage : ContentPage, IPage
@@ -11,16 +12,21 @@ namespace HelloMaui
 		public MainPage()
 		{
 			InitializeComponent();
+			
 		}
 
-		int count = 0;
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+			var test = ImageSource.FromResource("Hello.Maui.dotnet_bot.png", typeof(MainPage).GetTypeInfo().Assembly);
+			this.TestImage.Source = test;
+		}
 
-		private void OnButtonClicked(object sender, EventArgs e)
+        int count = 0;
+		private void OnCounterClicked(object sender, EventArgs e)
 		{
 			count++;
-			CounterLabel.Text = $"You clicked {count} times!";
+			CounterLabel.Text = $"Current count: {count}";
 		}
-
-		public IView View { get => (IView)Content; set => Content = (View)value; }
 	}
 }
